@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void creaasterisco(int,int);
+
+int main() {
+	int asterisco=0,scelta=0;
+	printf("Quanti asterischi? -> ");
+	scanf("%d",&asterisco);
+	printf("Che figura vuoi stampare?\n1)per mezzo triangolo all'incontrario\n2)per mezzo triangolo\n3)per triangolo completo\n-> ");
+	scanf("%d",&scelta);
+	creaasterisco(asterisco,scelta);
+	return 0;
+}
+
+void creaasterisco(int num,int s){
+	int i,j,k;
+	switch(s){                                  
+		case 1:         
+			printf("\n");                      
+			for(i=0;i<num;i++){
+				for(j=0;j<num-i;j++){
+				printf("*");
+				}	
+			printf("\n");
+			}	
+		break;                                  
+		case 2:                  
+			printf("\n");                       
+			for(i=0;i<num;i++){
+				for(j=num+1;j>num-i;j--){
+					printf("*");
+				}
+			printf("\n");
+			}
+		break;                                 
+		case 3:              
+			printf("\n");                     
+			for(i=0;i<num;i++){
+				for(j=num+1;j>num-i;j--){
+					for(k=0;k<num-i;k++){
+					printf(" ");
+					}
+					for(j=num+1;j>num-i;j--){
+					printf("* ");
+					}
+				}		
+				printf("\n");
+			}
+	}
+	return 0;	
+}
